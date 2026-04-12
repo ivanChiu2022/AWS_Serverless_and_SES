@@ -4,7 +4,7 @@ import boto3
 ses = boto3.client("ses", region_name="ca-central-1")  # use your SES region, e.g."us-east-1"
 
 SENDER = "your-verified-sender@example.com"   # must be verified in SES
-RECEIVER = "ylchiu1303@gmail.com"              # where you want to receive the message
+RECEIVER = "xxxxxxx@email.com"              # where you want to receive the message
 
 def lambda_handler(event, context):
     try:
