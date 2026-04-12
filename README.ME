@@ -1,0 +1,50 @@
+# AWS Serverless Contact Form (S3 + API Gateway + Lambda + SES)
+
+This project demonstrates how to build a **fully serverless contact form system on AWS**.  
+The solution allows users to submit a contact form from a static website and automatically sends the message via **Amazon SES email service**.
+
+The architecture uses **AWS serverless services**, meaning there are **no servers to manage**, and the solution is **scalable, secure, and low cost**.
+
+---
+
+# Project Architecture
+
+The system is divided into **two layers**:
+
+## Web Layer
+Handles website hosting, DNS, and secure content delivery.
+
+Services used:
+
+- **Amazon Route 53** – Domain name system (DNS)
+- **AWS Certificate Manager (ACM)** – SSL/TLS certificate
+- **Amazon CloudFront** – CDN and HTTPS delivery
+- **Amazon S3** – Static website hosting
+
+## Backend Layer
+Handles form submission processing and email sending.
+
+Services used:
+
+- **Amazon API Gateway** – REST/HTTP API endpoint
+- **AWS Lambda** – Serverless backend logic
+- **Amazon SES** – Email sending service
+
+---
+
+# Solution Flow
+
+1. User opens the website (`https://ivanchiu.info`)
+2. **Route 53** resolves the domain name.
+3. **CloudFront** receives the request and provides HTTPS using **ACM** certificate.
+4. **CloudFront** loads the static website files from **S3**.
+5. The user submits the contact form.
+6. The website sends an **HTTPS POST request** to **API Gateway**.
+7. **API Gateway** triggers a **Lambda function**.
+8. The **Lambda function processes the form data**.
+9. Lambda calls **Amazon SES** to send the email.
+10. **SES delivers the email** to the configured recipient.
+
+---
+
+# Architecture Diagram
