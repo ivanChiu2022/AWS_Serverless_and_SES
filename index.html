@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ivan Chiu | Technical Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 { font-family: "Raleway", sans-serif; }
+        .competency-tag { display: inline-block; margin: 2px; padding: 4px 8px; }
+    </style>
+    <script src="email.js" defer></script>
+</head>
+<body>
+
+
+            <div class="w3-card w3-white w3-margin-bottom">
+                <div class="w3-container w3-padding">
+                        <h2><i class="fa fa-envelope w3-margin-right w3-text-teal"></i>Contact Me</h2>
+
+                        <form id="contactForm">
+                            <input class="w3-input" type="text" id="name" placeholder="Your Name" required />
+                            <br>
+
+                            <input class="w3-input" type="email" id="email" placeholder="Your Email" required />
+                            <br>
+
+                            <input class="w3-input" type="text" id="subject" placeholder="Subject" required />
+                            <br>
+
+                            <textarea class="w3-input" id="message" rows="4" placeholder="Your message" required></textarea>
+                            <br>
+
+                            <button type="submit" class="w3-right w3-button w3-teal">Send</button>
+                            <br><br>
+
+                            <p id="result"></p>
+                        </form>
+                </div>
+            </div>
+</body>
+</html>
