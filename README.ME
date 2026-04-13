@@ -48,3 +48,77 @@ Services used:
 ---
 
 # Architecture Diagram
+
+Front End (WebLayer)
+Users --> Route53 (DNS) -->CloudFront (CDN + HTTPS via ACM) --> S3 (Static Website Hosting) --> JavaScript send API request
+
+Back end
+Frontend API Request --> API Gateway (HTTP API) --> Lambda (Python Backend) --> Amazon SES --> send to designed email
+
+
+---
+
+# Example Contact Form
+
+The website includes a simple contact form:
+
+- Name
+- Email
+- Subject
+- Description
+
+When the user clicks **Send**, the form data is sent to the backend API and an email is generated automatically.
+
+---
+
+# Cost Considerations
+
+This architecture is extremely cost efficient.
+
+Typical usage:
+
+- CloudFront requests
+- Lambda executions
+- API Gateway requests
+- SES email sending
+
+For low traffic websites (such as personal portfolio sites), the cost is **usually only a few cents per month**.
+
+---
+
+# Security Considerations
+
+- HTTPS enabled via **ACM + CloudFront**
+- Backend protected by **API Gateway**
+- CORS configuration required for frontend requests
+- SES verified identity required before sending emails
+
+---
+
+# Use Cases
+
+This architecture can be used for:
+
+- Portfolio contact forms
+- Customer inquiry systems
+- Website feedback forms
+- Serverless email notification systems
+
+---
+
+# Author
+
+Ivan Chiu
+
+Portfolio:  
+https://ivanchiu.info
+
+GitHub:  
+https://github.com
+
+---
+
+# License
+
+This project is for **learning and demonstration purposes**.
+
